@@ -1,0 +1,24 @@
+<!-- 如果页面是正在加载，应该给用户提示，但是当前的提示使用接口的提示进行，所以页面上不再写dom元素提示了 -->
+<view wx:if="{{cates.length}}" class='wrap'>
+    <scroll-view scroll-y style="height: {{wh}}px" class='sidenav'>
+        <view bindtap="_toggle" data-idx="{{index}}"
+            wx:for="{{cates}}" wx:key="cat_id"
+            class="{{index == idx ? 'active' : ''}}">
+            {{item.cat_name}}
+        </view>
+    </scroll-view>
+    <scroll-view scroll-y style="height: {{wh}}px" class='content'>
+        <!-- 循环输出二级分类 -->
+        <view wx:for="{{cates[idx].children}}" wx:key="cat_id" class='list'>
+            <text space="emsp">/   {{item.cat_name}}   /</text>
+            <!-- 循环输出三级分类 item.children-->
+            <view wx:for="{{item.children}}" wx:key="cat_id" bindtap="_goGoodsList" data-cid="{{item.cat_id}}">
+                <image src="{{item.cat_icon}}" />
+                <text>{{item.cat_name}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="empty" wx:elif="{{errMsg}}">
+    {{errMsg}}
+</view>

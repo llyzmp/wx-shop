@@ -1,0 +1,56 @@
+.wrap {
+    display: flex;
+}
+
+.sidenav {
+    width: 170rpx;
+    min-width: 170rpx;
+}
+
+.sidenav view {
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    background: #f2f3f5;
+    font-size: 26rpx;
+    color: #666;
+    border-left: 3px solid transparent;
+}
+
+.sidenav .active {
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    border-left: 3px solid #f44;
+}
+
+.content {
+    flex: auto;
+}
+
+.list {
+    margin: 10rpx 0;
+}
+
+.list > text {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26rpx;
+    margin: 20rpx 0;
+}
+
+.list view {
+    width: 33.3%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24rpx;
+    margin: 10rpx 0;
+}
+
+.list image {
+    width: 140rpx;
+    height: 140rpx;
+}

@@ -1,0 +1,103 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.4",
+	"appid": "wx38d8faffac4d34d2",
+	"projectname": "hmugo",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "分类页面",
+					"pathName": "pages/cates/cates",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "商品列表页",
+					"pathName": "pages/goods_list/index",
+					"query": "query=热",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": " 搜索",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "商品详情页",
+					"pathName": "pages/goods_detail/index",
+					"query": "goods_id=636",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车页面",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "下单页面",
+					"pathName": "pages/confirm/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

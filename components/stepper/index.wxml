@@ -1,0 +1,7 @@
+<view class="num">
+    <text bindtap="_changeCounts" data-id="{{goods.id}}" data-type="sub">-</text>
+    <input type="number" value="{{goods.count}}"
+        bindinput="_input" data-id="{{goods.id}}"
+        bindblur="_blur" />
+    <text bindtap="_changeCounts" data-id="{{goods.id}}" data-type="add">+</text>
+</view>

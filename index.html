@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        // 编程语言的作用域: 静态作用域(词法作用域) + 动态作用域
+        // this指向
+        // 0. 只有函数才有this，才有作用域
+        var a = 2
+        var obj = {
+            a: 1,
+            fn: function (fn) {
+                console.log('---fn', this)
+                // this.arg = fn
+
+                // this.arg()
+                setTimeout(
+                    function() {
+                        console.log('settimeout', this)
+                    },
+                    100
+                )
+            },
+            f3: () => {
+                console.log(this.a)
+            }
+        }
+
+        // 1. obj.fn fn中的this指向obj
+        // 2. 直接执行一个函数f1，不管这个函数来自哪里，函数中的this指向到全局
+        // 2.1 如果是严格模式，全局对象是undefined
+        // 2.2 如果是非严格模式，全局对象是window对象
+        // 2.3 特例: setTimeout setInterval这类定时器，他们的回调函数，即时是匿名函数，运行在严格模式下，匿名回调函数的this依然是window。浏览器在执行这类定时器是，直接将window对象注入到了他们的回调函数中作为this. 如果回调函数是箭头函数，遵循箭头函数的规则
+
+        // obj.fn()
+
+        var f1 = obj.fn
+
+        f1()
+
+        function f2(x) {
+            console.log('f2 arguments: ', arguments)
+            this.x = x
+            console.log('f2的this', this)
+
+            return 'string'
+        }
+
+        // obj.fn(f2)
+
+        // 3. 箭头函数下没有this，this使用的是当前函数所在区域的this
+        
+        obj.f3()
+
+        // 4. call apply bind等方法的是明确指定this的指向 => 实现一个bind函数
+        // f2.call(obj)
+
+        // 5. new的时候，this指向的是实例对象
+        // console.log('f2', new f2())
+        // 分析new运算符的执行过程
+        // 1. 创建一个空对象
+        // 2. 把当前函数的this指向到这个空对象上
+        // 3. 把this对象的[[proto]]原型指向到构造函数的prototype属性 this.__proto__ = f2.prototype
+        // 4. 执行函数
+        // 5. 如果return一个引用类型的值，构造函数就返回该值；如果返回基本类型的值或者没有指定返回值，返回this(当没有明确指定返回引用类型的值时，返回this)
+
+        // 实现bind函数:
+        // 1. bind函数指定this指向
+        // 2. bind函数不执行该函数
+        // 3. 注意bind时传递参数和执行bind后的函数时传递的参数不要丢失
+        Function.prototype._bind = function(context) {
+            const that = this
+            // 1. 取得在bind指定context对象时，传递过来的其他参数
+            const _args = [].slice.call(arguments, 1)
+            return function() {
+                // 2. 获取函数的参数
+                // arguments是一个类数组的对象，转成数组的方式使用方式1[...arguments] 方式2: [].slice.call(arguments, 0)
+                const args = [...arguments]
+
+                // 3. 取的bind时的额外参数以及执行绑定context上下文后的函数传递的参数，一起传给原来的函数
+                that.call(context, ..._args, ...args)
+                // that.apply(context, args)
+                // that.apply(context, [..._args, ...args])
+            }
+        }
+
+        var f4 = f2.bind(obj, 'x')
+
+        console.log(f4('a'))
+
+        var f5 = f2._bind(obj, 'x')
+
+        console.log(f5('a', 'b', 'c'))
+    </script>
+</body>
+</html>

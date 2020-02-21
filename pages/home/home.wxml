@@ -1,0 +1,22 @@
+<swiper indicator-dots circular>
+    <swiper-item wx:for="{{swiperData}}" wx:key="index">
+        <navigator url="{{item.navigator_url}}">
+            <image src="{{item.image_src}}" />
+        </navigator>
+    </swiper-item>
+</swiper>
+
+<view class="cates">
+    <image wx:for="{{cates}}" wx:key="index" src="{{item.image_src}}" bindtap="_goCates" />
+</view>
+
+<view class='floor'>
+    <view class='item' wx:for="{{floorData}}" wx:key="index">
+        <image src="{{item.floor_title.image_src}}" />
+        <view class='box'>
+            <image bindtap="_goGoodsList" data-url="{{item.navigator_url}}" wx:for="{{item.product_list}}" wx:key="index"
+                src="{{item.image_src}}"
+                style="width: {{item.image_width}}rpx" />
+        </view>
+    </view>
+</view>

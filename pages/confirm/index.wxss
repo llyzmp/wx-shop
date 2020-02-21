@@ -1,0 +1,121 @@
+.addr-empty {
+    height: 160rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addr-empty text {
+    display: inline-block;
+    width: 180rpx;
+    height: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+    color: #fff;
+    background: #1989fa;
+    border-radius: 3rpx;
+    font-size: 24rpx;
+}
+
+.divider {
+    width: 100vw;
+    height: 10rpx;
+}
+
+.addr {
+    font-size: 24rpx;
+    padding: 0 25rpx;
+}
+
+.addr > view {
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.name-tel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-tel view {
+    display: inline-flex;
+    align-items: center;
+}
+
+.name-tel image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.list {
+    padding: 20rpx 25rpx 100rpx;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #ececec;
+    padding: 10rpx 0;
+}
+
+.item image {
+    width: 180rpx;
+    min-width: 180rpx;
+    height: 180rpx;
+    margin-right: 20rpx;
+}
+
+.info {
+    font-size: 24rpx;
+}
+
+.info view {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 20rpx;
+}
+
+.info view text:first-child {
+    color: #f44;
+    font-weight: bold;
+}
+
+button.userinfo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0;
+}
+
+.tools {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24rpx;
+}
+
+.money text:last-child {
+    color: #f44;
+    font-weight: bold;
+}
+
+.submit {
+    width: 275rpx;
+    height: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    color: #fff;
+    background: #f44;
+    margin-left: 20rpx;
+}

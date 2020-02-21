@@ -1,0 +1,18 @@
+<view wx:if="{{errMsg}}" class="empty">
+    {{errMsg}}
+</view>
+<view wx:elif="{{goods.length}}" class='wrap'>
+    <view wx:for="{{goods}}" wx:key="goods_id" bindtap="_goGoodsDetail" class="item" data-id="{{item.goods_id}}">
+        <image src="{{item.goods_big_logo}}" />
+        <view>
+            <text class='name'>{{item.goods_name}}</text>
+            <view class='info'>
+                <text >￥ {{item.goods_price}}</text>
+                <text>X {{item.goods_number}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='tips' wx:if="{{pagenum * pagesize >= total}}">数据已经全部加载</view>
+    <!-- <view class='tips' wx:if="{{goods.length >= total}}">数据已经全部加载</view> -->
+</view>

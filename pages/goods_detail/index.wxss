@@ -1,0 +1,223 @@
+swiper {
+    width: 750rpx;
+    height: 750rpx;
+}
+
+swiper-item,
+swiper-item image {
+    width: 100%;
+    height: 100%;
+}
+
+.price {
+    font-size: 40rpx;
+    color: #f44;
+    font-weight: bold;
+    padding-left: 20rpx;
+    margin: 20rpx 0;
+}
+
+.name {
+    display: flex;
+    font-size: 26rpx;
+    padding-left: 20rpx;
+}
+
+.name view:first-child {
+    flex: auto;
+    margin-right: 40rpx;
+}
+
+.name view:last-child {
+    width: 120rpx;
+    min-width: 120rpx;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #ececec;
+}
+
+.name image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-bottom: 10rpx;
+}
+
+.express {
+    padding-left: 20rpx;
+    font-size: 26rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.divider {
+    width: 100vw;
+    height: 15rpx;
+    background: #ececec;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26rpx;
+    height: 80rpx;
+    padding-left: 20rpx;
+}
+
+.item text:first-child {
+    font-weight: bold;
+    margin-right: 10rpx;
+}
+
+.item image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 30rpx;
+}
+
+.tab-header {
+    width: 100vw;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 26rpx;
+    position: relative;
+}
+
+.tab-header view {
+    width: 50vw;
+    height: 100%;
+    display: inline-block;
+}
+
+.tab-header .active {
+    color: #f44;
+}
+
+/*初始状态*/
+.tab-header .indicator {
+    width: 25vw;
+    height: 3px;
+    background: #f44;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate3d(12.5vw, 0, 0);
+    transition: all 400ms ease-in-out;
+}
+
+/*终止状态*/
+.tab-header .indicator.active {
+    transform: translate3d(62.5vw, 0, 0);
+}
+
+.detail,
+.standard {
+    padding-bottom: 100rpx;
+}
+
+.standard {
+    border-top: 1rpx solid #ececec;
+}
+
+.standard view {
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+}
+
+.standard text {
+    border-bottom: 1rpx solid #ececec;
+    display: inline-block;
+    text-indent: 2em;
+    height: 100%;
+    line-height: 80rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24rpx;
+}
+
+.standard text:first-child {
+    border-right: 1rpx solid #ececec;
+    width: 39%;
+}
+
+.standard text:last-child {
+    width: 60%;
+}
+
+.tools {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+}
+
+.service,
+.cart {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100rpx;
+    height: 100%;
+}
+
+.service {
+    border-right: 1rpx solid #ececec;
+    position: relative;
+}
+
+.service button {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    opacity: 0;
+}
+
+.service image,
+.cart image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-bottom: 10rpx;
+}
+
+.cart {
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    width: 30rpx;
+    height: 30rpx;
+    text-align: center;
+    line-height: 30rpx;
+    border-radius: 50%;
+    background: #f44;
+    color: #fff;
+    right: 10rpx;
+    top: 0;
+}
+
+.join,
+.buy {
+    width: 275rpx;
+    height: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    background: #f44;
+    color: #fff;
+    font-size: 26rpx;
+}
+
+.join {
+    background: #ff976a;
+}

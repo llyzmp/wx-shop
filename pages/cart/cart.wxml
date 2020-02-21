@@ -1,0 +1,47 @@
+<view class='empty' wx:if="{{!cart.length}}">
+    <image src='/assets/images/cart_empty@2x.png' />
+    <text>哎呦，购物车是空的噢~</text>
+</view>
+<view wx:else>
+    <view class='title'>
+        <image src='/assets/images/shop.png' />
+        <text>购物车列表</text>
+    </view>
+    <view class='list'>
+        <view class='item' wx:for="{{cart}}" wx:key="id">
+            <slide-delete>
+                <view class='goods' slot="content">
+                    <view class='check' bindtap="_toggle" data-id="{{item.id}}">
+                        <image wx:if="{{item.check}}" src='/assets/images/check.png' />
+                        <image wx:else src='/assets/images/uncheck.png' />
+                    </view>
+                    <image src="{{item.pic}}" />
+                    <view class='info'>
+                        <text>{{item.name}}</text>
+                        <view class='price-num'>
+                            <text>￥ {{item.price}}</text>
+                            <!-- <text>{{item.count}}</text> -->
+                            <stepper goods="{{item}}" bind:update="_update" />
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="_delete" data-id="{{item.id}}" class='delete' slot="delete">删除</view>
+            </slide-delete>
+        </view>
+    </view>
+
+    <view class='tools'>
+        <view class='toggle-all' bindtap="_toggleAll">
+            <image wx:if="{{allcheck}}" src='/assets/images/check.png' />
+            <image wx:else src='/assets/images/uncheck.png' />
+            <text>全选</text>
+        </view>
+        <view class='price-btn'>
+            <view class='tools-price'>
+                <text>合计: </text>
+                <text>￥ {{total}}</text>
+            </view>
+            <view class='submit' bindtap="_submit">提交订单</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,25 @@
+.num {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.num input {
+    width: 56rpx;
+    height: 56rpx;
+    background: #f2f3f5;
+    color: #333;
+    text-align: center;
+    line-height: 56rpx;
+    margin: 0 5rpx;
+}
+
+.num text {
+    display: inline-block;
+    width: 56rpx;
+    height: 56rpx;
+    background: #f2f3f5;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+}

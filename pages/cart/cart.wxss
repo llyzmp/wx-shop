@@ -1,0 +1,147 @@
+.empty {
+    flex-direction: column;
+}
+
+.empty image {
+    width: 180rpx;
+    height: 180rpx;
+    margin-bottom: 20rpx;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    padding: 30rpx 25rpx;
+}
+
+.title image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+}
+
+.list {
+    padding-bottom: 100rpx;
+}
+
+.item {
+    margin: 20rpx 0;
+    border-bottom: 1rpx solid #ececec;
+    position: relative;
+}
+
+.goods {
+    display: flex;
+    padding: 0 25rpx;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120rpx;
+    height: 180rpx;
+    background: #f44;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check {
+    width: 40rpx;
+    min-width: 40rpx;
+    height: 180rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10rpx;
+}
+
+.check image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.goods > image {
+    width: 180rpx;
+    height: 180rpx;
+    min-width: 180rpx;
+    margin-right: 10rpx;
+}
+
+.info {
+    flex: auto;
+    font-size: 24rpx;
+}
+
+.info > text {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20rpx;
+}
+
+.price-num {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-num > text:first-child {
+    color: #f44;
+    font-weight: bold;
+}
+
+.tools {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100rpx;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24rpx;
+    z-index: 99;
+}
+
+.toggle-all {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 25rpx;
+}
+
+.toggle-all image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 20rpx;
+}
+
+.price-btn {
+    display: inline-flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+}
+
+.tools-price text:first-child{
+    font-weight: bold;
+}
+
+.tools-price text:last-child {
+    color: #f44;
+    font-weight: bold;
+}
+
+.submit {
+    width: 275rpx;
+    height: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    background: #f44;
+    color: #fff;
+    margin-left: 20rpx;
+}

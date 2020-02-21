@@ -1,0 +1,12 @@
+<movable-area>
+    <movable-view inertia="{{true}}" out-of-bounds="{{true}}"
+        bindtouchstart="_touchStart"
+        bindtouchend="_touchEnd"
+        bindchange="_movableChange"
+        x="{{x}}"
+        direction="horizontal"
+    >
+        <slot name='content'></slot>
+    </movable-view>
+</movable-area>
+<slot name='delete'></slot>

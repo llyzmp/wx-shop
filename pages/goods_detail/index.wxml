@@ -1,0 +1,69 @@
+<view class='empty' wx:if="{{errMsg}}">
+    {{errMsg}}
+</view>
+<view wx:elif="{{goods_id}}">
+    <swiper indicator-dots circular>
+        <swiper-item wx:for="{{pics}}" wx:key="pics_id">
+            <image src="{{item.pics_big}}" bindtap="_preview" data-pic="{{item.pics_big}}" />
+        </swiper-item>
+    </swiper>
+    <view class='price'>￥ {{goods_price}}</view>
+    <view class='name'>
+        <view>{{goods_name}}</view>
+        <view>
+            <image src="/assets/images/star.png" />
+            <text>收藏</text>
+        </view>
+    </view>
+    <view class="express">快递：免运费</view>
+    <view class='divider'></view>
+    <view class='item'>
+        <view>
+            <text>促销:</text>
+            <text>满300元减30元</text>
+        </view>
+    </view>
+    <view class='item'>
+        <view>
+            <text>已选:</text>
+            <text>黑色/S/1件</text>
+        </view>
+    </view>
+    <view class='divider'></view>
+    <view class='item' bindtap="_chooseAddress">
+        <view>
+            <text>收货地址:</text>
+            <text>{{address}}</text>
+        </view>
+        <image src="/assets/images/arrow-right.png" />
+    </view>
+    <view class='divider'></view>
+    <view class='tab-header'>
+        <view class="{{active == 0 ? 'active' : ''}}" bindtap="_toggle" data-index='0'>图文详情</view>
+        <view class="{{active == 1 ? 'active' : ''}}" bindtap="_toggle" data-index='1'>规格参数</view>
+        <view class="indicator {{active == 1 ? 'active' : ''}}"></view>
+    </view>
+    <view class="detail" hidden="{{active == 1}}">
+        <rich-text nodes="{{goods_introduce}}"></rich-text>
+    </view>
+    <view class="standard" hidden="{{active == 0}}">
+        <view wx:for="{{attrs}}" wx:key="attr_id">
+            <text>{{item.attr_name}}</text>
+            <text>{{item.attr_value}}</text>
+        </view>
+    </view>
+    <view class='tools'>
+        <view class='service' open-type='contact'>
+            <image src="/assets/images/message.png" />
+            <text>客服</text>
+            <button open-type="contact" />
+        </view>
+        <view class='cart' bindtap="_toCarts">
+            <image src="/assets/images/cart.png" />
+            <text>购物车</text>
+            <text class="count">{{count}}</text>
+        </view>
+        <view class='join' bindtap="_join">加入购物车</view>
+        <view class='buy'>立即购买</view>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+<view class='search-wrap'>
+    <view class='search'>
+        <image src='/assets/images/search.png' />
+        <input type="text" value="{{query}}" placeholder="请输入搜索内容"
+            bindinput="_input" bindconfirm="_confirm" />
+    </view>
+    <view class='cancel' bindtap="_clear">取消</view>
+</view>
+<!-- 有输入内容时显示搜索建议项 -->
+<view class="sug-list" wx:if="{{query}}">
+    <view wx:for="{{sugList}}" wx:key="goods_id" bindtap="_goGoodsDetail" data-id="{{item.goods_id}}">
+        {{item.goods_name}}
+    </view>
+</view>
+<!-- 没有输入内容时显示历史记录 -->
+<view wx:else>
+    <view class="his-title">
+        <text>历史记录</text>
+        <image bindtap="_clean" src='/assets/images/delete.png' />
+    </view>
+    <view class='his-list'>
+        <text wx:for="{{history}}" wx:key="*this" bindtap="_goGoodsList" data-query="{{item}}">{{item}}</text>
+    </view>
+</view>

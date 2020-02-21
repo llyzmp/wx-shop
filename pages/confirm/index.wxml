@@ -1,0 +1,35 @@
+<view wx:if="{{addr.userName}}" class='addr' bindtap="_chooseAddress">
+    <view class='name-tel'>
+        <text>收货人: {{addr.userName}}</text>
+        <view>
+            <text>联系电话: {{addr.telNumber}}</text>
+            <image src='/assets/images/arrow-right.png' />
+        </view>
+    </view>
+    <view>{{addr.provinceName}}{{addr.cityName}}{{addr.countyName}}{{addr.detailInfo}}</view>
+</view>
+<view wx:else class="addr-empty" bindtap="_chooseAddress">
+    <text>+ 选择收货地址</text>
+</view>
+<image class='divider' src='/assets/images/cart_border@2x.png' />
+<view class='list'>
+    <view wx:for="{{cart}}" wx:key="id" class='item'>
+        <image src="{{item.pic}}" />
+        <view class='info'>
+            <text>{{item.name}}</text>
+            <view>
+                <text>￥ {{item.price}}</text>
+                <text>x {{item.count}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view wx:if="{{hasLogin}}" class='tools'>
+    <view class='money'>
+        <text>合计: </text>
+        <text>￥ {{money}}</text>
+    </view>
+    <view class='submit' bindtap="_purchase">支付订单</view>
+</view>
+<button wx:else open-type="getUserInfo" bindgetuserinfo="_userinfo" class='userinfo' type='primary'>登录</button>
